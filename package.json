@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/supert111/goit-js-hw-12-countries"
+    "url": "https://github.com/supert111/goit-js-hw-12-countries-async-await"
   },
   "keywords": [],
   "author": "Mykola Saulko <mexinvin@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/supert111/goit-js-hw-12-countries/issues"
+    "url": "https://github.com/supert111/goit-js-hw-12-countries-async-await/issues"
   },
-  "homepage": "https://supert111.github.io/goit-js-hw-12-countries/",
+  "homepage": "https://supert111.github.io/goit-js-hw-12-countries-async-await/",
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
