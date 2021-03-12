@@ -14,22 +14,18 @@ inputRef.addEventListener('input', debounce(() => {
     };
     const searchQuery = inputRef.value;
  // запуск функции с разными исходами выполнения   
-    async function fetchCountries(searchQuery) {
-   try {
-    const render = await (renderCountry);
-    return render;
-   } catch(error) {
-    console.log(error);
-   }
-    }
- }, 500));
+    fetchCountries(searchQuery)
+    .then(renderCountry)
+    .catch(error => console.log(error));
+    }, 500));
     
 // функция со значением с инпута делает запрос на сервер и возвращает результат 
- async function fetchCountries(name) {
-    const countrySeachResult = await fetch(`https://restcountries.eu/rest/v2/name/${name}`);
-    const resultCountry = await countrySeachResult.json();
-      return resultCountry;
-  }
+function fetchCountries(name) {
+  return fetch(`https://restcountries.eu/rest/v2/name/${name}`)
+    .then(response => {
+    return response.json();
+  })
+}
 
 // функция получает результат и по разным условиям выполняет разметку по шаблонам
 function renderCountry(country) {
