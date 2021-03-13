@@ -13,18 +13,22 @@ inputRef.addEventListener('input', debounce(() => {
         clearClassList ();
     };
     const searchQuery = inputRef.value;
+   
  // запуск функции с разными исходами выполнения   
-    fetchCountries(searchQuery)
+ fetchCountries(searchQuery) 
     .then(renderCountry)
     .catch(error => console.log(error));
+
+        
+     // return template;
+
     }, 500));
     
 // функция со значением с инпута делает запрос на сервер и возвращает результат 
-function fetchCountries(name) {
-  return fetch(`https://restcountries.eu/rest/v2/name/${name}`)
-    .then(response => {
-    return response.json();
-  })
+async function fetchCountries(name) {
+  const seachResulte = await fetch(`https://restcountries.eu/rest/v2/name/${name}`);
+  const resulte = await seachResulte.json();
+  return resulte;
 }
 
 // функция получает результат и по разным условиям выполняет разметку по шаблонам
